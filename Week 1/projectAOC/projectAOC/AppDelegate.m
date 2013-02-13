@@ -23,44 +23,48 @@
     
     //Activity 1
     //Casting - Assignment Resubmit.
-    int distance = 15;
+    float distance = 17.5;
     
-    int quanity = 6;
+    int quantity = 7;
     
-    float dailyMiles = (float)distance / (float)quanity;
+    int distanceGoal = (int)distance;
+    
+    float dailyMiles = distance / quantity;
     
     NSLog(@"In order for me to maintain my physical fitness i need to run a certain distance daily.");
     
-    NSLog(@"I find myself running on average %.1f miles daily five days a week", dailyMiles);
+    NSLog(@"My goal is to run a distance of more than %d miles weekly, although my average for the past few weeks has been %.1f miles", distanceGoal, distance);
     
-    NSLog(@"Which will put me at a total of %d miles weekly", distance);
+    NSLog(@"I find myself running on average %.1f miles daily seven days a week", dailyMiles);
+    
+    NSLog(@"Which will put me at a total of %.1f miles weekly", distance);
     
     //Single For Loop that decrease output
-    for (int i =6; i>=1; i--)
+    for (int i =7; i>=1; i--)
     {
-        NSLog(@"I have %d days until I get 2 rest days", i);
+        NSLog(@"I have %d days until i start a new week", i);
     }
     
     //while loop to loop through days worked out
     int daysWorkedOut = 1;
     
-    while (daysWorkedOut <= 6 )
+    while (daysWorkedOut <= 7 )
     {
         NSLog(@"I have done my workout for %d day this week", daysWorkedOut);
         //incremend daysLeft by 1
         daysWorkedOut++;
     }
     
-    NSLog(@"I now have 2 days of rest");
+    NSLog(@"I now get to start over and work towards my weekly goal");
     
     // while loop with nested for loop
 
     int days = 0;
     
-    while (days <6)
+    while (days <7)
             
         {
-            for (float milesDone=2.5f; milesDone <= 15.0f; milesDone += 2.5f)
+            for (float milesDone=2.5f; milesDone <= 17.5f; milesDone += 2.5f)
                     
                 {
                     NSLog(@"I have ran %.1f miles",milesDone);
@@ -68,7 +72,7 @@
                     //increment days by 1
                     days++;
                 
-                    NSLog(@"in %d", days);
+                    NSLog(@"in %d days", days);
                 }
     
         }
@@ -80,26 +84,26 @@
     
     float mileageCompleted = 12.5f;
     
-    int mileageGoal = 15;
+    float mileageGoal = 17.5;
     
-    BOOL weekend = YES;
+    BOOL sunday = YES;
     
-    int completedDays = 5;
+    int completedDays = 4;
     
     //IF Else statement to check against and or comparison
-     NSLog(@"My workouts are completed throughout the week on weekdays");
+     NSLog(@"My workouts are completed throughout the week.");
 
-    if (((mileageCompleted == mileageGoal) && (weekend == YES)) || (completedDays == 6))
+    if (((mileageCompleted == mileageGoal) && (sunday == YES)) || (completedDays == 7))
     {
         
-        NSLog(@"I have met my goals for the week of %d miles and worked out for %d days.", mileageGoal, days);
+        NSLog(@"I have met my goals for the week of %.1f miles and worked out for %d days.", mileageGoal, days);
         
-    }else if((weekend == YES) && (!(mileageCompleted == mileageGoal))){
+    }else if((sunday == YES) && (!(mileageCompleted == mileageGoal))){
         
-        NSLog(@"It is the weekend however, I have not completed my goal of %d miles in %d days.", mileageGoal, days);
+        NSLog(@"It is Sunday however, I have not completed my goals of %.1f miles in %d days. I must reach my goals by the end of the today.", mileageGoal, days);
         
     }else{
-        NSLog(@"I have not met any of my goals this week.");
+        NSLog(@"I have not reached any of my goals this week. I still have a couple days to do so.");
     }
 
     
