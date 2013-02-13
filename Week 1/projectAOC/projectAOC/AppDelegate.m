@@ -22,21 +22,21 @@
     [self.window makeKeyAndVisible];
     
     //Activity 1
+    //Casting - Assignment Resubmit.
+    int distance = 15;
     
-    float distance = 2.5f;
+    int quanity = 6;
     
-    int quanity = 5;
-    
-    float totalmiles = distance * (float)quanity;
+    float dailyMiles = (float)distance / (float)quanity;
     
     NSLog(@"In order for me to maintain my physical fitness i need to run a certain distance daily.");
     
-    NSLog(@"I find myself running on average %.1f miles daily five days a week", distance);
+    NSLog(@"I find myself running on average %.1f miles daily five days a week", dailyMiles);
     
-    NSLog(@"Which will put me at a total of %.1f miles weekly", totalmiles);
+    NSLog(@"Which will put me at a total of %d miles weekly", distance);
     
     //Single For Loop that decrease output
-    for (int i =5; i>=1; i--)
+    for (int i =6; i>=1; i--)
     {
         NSLog(@"I have %d days until I get 2 rest days", i);
     }
@@ -44,7 +44,7 @@
     //while loop to loop through days worked out
     int daysWorkedOut = 1;
     
-    while (daysWorkedOut <= 5 )
+    while (daysWorkedOut <= 6 )
     {
         NSLog(@"I have done my workout for %d day this week", daysWorkedOut);
         //incremend daysLeft by 1
@@ -57,10 +57,10 @@
 
     int days = 0;
     
-    while (days <5)
+    while (days <6)
             
         {
-            for (float milesDone=2.5f; milesDone <= 12.5f; milesDone += 2.5f)
+            for (float milesDone=2.5f; milesDone <= 15.0f; milesDone += 2.5f)
                     
                 {
                     NSLog(@"I have ran %.1f miles",milesDone);
@@ -75,25 +75,31 @@
     
    
     
-    BOOL weekend = NO;
     
-    float mileageCompleted = 10.0f;
+    //Refactors if , else if, else statement for Assignment resubmit
     
-    float mileageGoal = 12.5f;
-
+    float mileageCompleted = 12.5f;
+    
+    int mileageGoal = 15;
+    
+    BOOL weekend = YES;
+    
     int completedDays = 5;
     
     //IF Else statement to check against and or comparison
-     NSLog(@"My workout are completed throughout the week on weekdays");
+     NSLog(@"My workouts are completed throughout the week on weekdays");
 
-    if ((mileageCompleted == mileageGoal && completedDays == 5) || (weekend == YES))
+    if (((mileageCompleted == mileageGoal) && (weekend == YES)) || (completedDays == 6))
     {
         
-        NSLog(@"I have met my goals for the week of %.1f miles and worked out for %d days", mileageGoal, days);
+        NSLog(@"I have met my goals for the week of %d miles and worked out for %d days.", mileageGoal, days);
         
-    } else{
+    }else if((weekend == YES) && (!(mileageCompleted == mileageGoal))){
         
-        NSLog(@"I have not completed my weekly goals of %.1f miles and have not worked out for %d", mileageGoal, days);
+        NSLog(@"It is the weekend however, I have not completed my goal of %d miles in %d days.", mileageGoal, days);
+        
+    }else{
+        NSLog(@"I have not met any of my goals this week.");
     }
 
     
