@@ -19,6 +19,7 @@
     UILabel *summaryHead;
     UILabel *summary;
     UILabel *charTypeHead;
+    UILabel *charText;
 }
 
 @end
