@@ -25,8 +25,8 @@
     //UILabel for UserName
     UILabel *userName = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 15.0f, 90.0f, 20.0f)];
     
-    if (userName != nil)
-    {
+    if (userName != nil){
+        
         userName.text = @"Username:";
         [self.view addSubview:userName];
     }
@@ -99,7 +99,9 @@
     
     //Tap screen to make keyboard disappear
     UITapGestureRecognizer *tapOnScreen = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardDisappear)];
-    tapOnScreen.cancelsTouchesInView = NO; //so that action such as clear text field button can be pressed
+    
+    //set to NO, so not all touches are cancelled. If set to YES User will not be able to touch ShowDate or Info Buttons
+    tapOnScreen.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapOnScreen];
     
     
@@ -123,20 +125,24 @@
             }
         
     }else if(button.tag == BUTTON_DATE){
+        
             //Date Object NSDate
             NSDate *currentDate = [NSDate date];
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        
             if(dateFormat !=nil){
                 //Set Date Format
                 [dateFormat setDateStyle:NSDateFormatterLongStyle];
                 [dateFormat setTimeStyle:NSDateFormatterFullStyle];
         
             }
+        
             //Place Date objext into string
             NSString *todaysDate = [dateFormat stringFromDate:currentDate];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Date" message:todaysDate delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
             if(alertView != nil){
+                
                 [alertView show];
             }
         
@@ -147,6 +153,7 @@
             infoDisplay.backgroundColor = [UIColor lightGrayColor];
             
             if (infoDisplay != nil){
+                
                 infoDisplay.text = @"This application was created by Dale Tupling";
                 infoDisplay.numberOfLines = 2;
                 
